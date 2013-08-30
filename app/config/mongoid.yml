@@ -1,0 +1,15 @@
+development:
+  sessions:
+    default:
+      database: cool_demo
+      hosts:
+        - localhost:27017
+
+production:
+  sessions:
+    default:
+      host: prod_host
+      port: 1000
+      username: main
+      password: blabla
+      database: cool_demo

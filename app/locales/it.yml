@@ -1,0 +1,6 @@
+it:
+  hello world: Ciao Mondo!
+  hello: Ciao
+  time:
+    formats:
+      default: "%H:%M:%S"

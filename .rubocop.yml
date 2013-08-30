@@ -1,0 +1,59 @@
+# This is the configuration used to check the rubocop source code.
+#
+# inherit_from: config/default.yml
+#
+# # Avoid methods longer than 30 lines of code
+AllCops:
+  Includes:
+    - Gemfile
+    - Rakefile
+  Excludes:
+   - bin/**
+   - vendor/**
+   - tmp/**
+MethodLength:
+  Max: 30
+
+Encoding:
+  Enabled: false
+
+# I will support $:
+AvoidPerlisms:
+  Enabled: false
+
+LineLength:
+#  Max: 119
+  Max: 519
+
+# don't want to Documnt class
+Documentation:
+  Enabled: false
+
+# use ruby1.8 hash
+HashSyntax:
+  Enabled: false
+
+# like to use extend self
+ModuleFunction:
+  Enabled: false
+
+SpaceInsideHashLiteralBraces:
+  Enabled: false
+#
+#Documentation:
+#  Enabled: false
+#
+#CaseIndentation:
+#  Enabled: false
+#
+#DotPosition:
+#  Enabled: false
+#
+#Blocks:
+#  Enabled: false # {} for multi-line blocks in RSpec expectations is very common
+#
+#TrivialAccessors:
+#  Enabled: false # Bosh::Stemcell::Infrastructure#light? was a false positive
+#
+#AvoidPerlisms:
+#  Enabled: false # Unfortunately $CHILD_STATUS isn't always the same as $?

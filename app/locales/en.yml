@@ -1,0 +1,6 @@
+en:
+  hello world: Hello World!
+  hello: Hello!
+  time:
+    formats:
+      default: "%H:%M"

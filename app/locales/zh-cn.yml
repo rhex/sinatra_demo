@@ -1,0 +1,6 @@
+zh-cn:
+  hello world: 你好，世界！ 
+  hello: 你好！
+  time:
+    formats:
+      default: "%H:%M:%S"
