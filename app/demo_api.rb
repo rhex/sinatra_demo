@@ -16,7 +16,7 @@ class Demo < Sinatra::Base
     I18n.load_path += Dir[File.join(settings.root, 'locales', '*.yml')]
     I18n.backend.load_translations
     I18n.default_locale = :en
-    set :foo => 'bar', :baz => Proc.new { "Hello " + foo }
+    set :foo => 'bar', :baz => proc { 'Hello ' + foo }
     # set :root, File.dirname(__FILE__)
     # public folder is default if created, or :static enabled
     # set :public_folder, Proc.new { File.join(root, "static") }

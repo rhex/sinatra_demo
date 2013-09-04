@@ -2,7 +2,6 @@ require 'eventmachine'
 require 'sinatra/base'
 require 'thin'
 
-
 # This example shows you how to embed Sinatra into your EventMachine
 # application. This is very useful if you're application needs some
 # sort of API interface and you don't want to use EM's provided
@@ -49,7 +48,7 @@ def run(opts)
 
     # NOTE that we have to use an EM-compatible web-server. There
     # might be more, but these are some that are currently available.
-    unless ['thin', 'hatetepe', 'goliath'].include? server
+    unless %w(thin hatetepe goliath).include? server
       raise "Need an EM webserver, but #{server} isn't"
     end
 

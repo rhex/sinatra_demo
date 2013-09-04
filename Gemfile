@@ -33,7 +33,7 @@ group :development do
   gem 'better_errors'
   gem 'mongo'
   gem 'bson_ext'
-  gem "mongoid", "~> 3.1.4"
+  gem 'mongoid', '~> 3.1.4'
   # seems mongoid does not support activemodel 4.0
   # gem 'activerecord', '~> 4.0.0'
   gem 'activerecord', '~> 3.2.0'
@@ -41,6 +41,7 @@ group :development do
   gem 'sinatra-activerecord'
   gem 'sinatra-flash'
   gem 'sinatra-redirect-with-flash'
+  gem 'rack-parser', :require => 'rack/parser'
   gem 'tux'
   gem 'pg'
   gem 'sqlite3'

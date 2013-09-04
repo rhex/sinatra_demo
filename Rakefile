@@ -2,7 +2,7 @@ require 'rake/testtask'
 require 'rspec/core/rake_task'
 require 'sinatra/activerecord/rake'
 $:.unshift File.dirname(__FILE__)
-#require 'app/main'
+# require 'app/main'
 require 'app/blog'
 
 Rake::TestTask.new do |t|

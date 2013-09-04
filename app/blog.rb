@@ -34,7 +34,7 @@ helpers do
   end
 
   def post_show_page?
-    request.path_info =~ /\/posts\/\d+$/
+    request.path_info =~ %r(/posts/\d+$)
   end
 
   def delete_post_button(post_id)
@@ -45,54 +45,54 @@ end
 get '/' do
   @posts = Post.order('created_at DESC')
   @title = 'Welcome'
-  erb :"posts/index"
+  erb :'posts/index'
 end
 
-get "/posts/create" do
-  @title = "Create post"
+get '/posts/create' do
+  @title = 'Create post'
   @post = Post.new
-  erb :"posts/create"
+  erb :'posts/create'
 end
 
-get "/posts/:id" do
+get '/posts/:id' do
   @post = Post.find(params[:id])
   @title = @post.title
-  erb :"posts/view"
+  erb :'posts/view'
 end
 
-delete "/posts/:id" do
+delete '/posts/:id' do
   @post = Post.find(params[:id]).destroy
-  redirect "/"
+  redirect '/'
 end
 
-put "/posts/:id" do
+put '/posts/:id' do
   @post = Post.find(params[:id])
   if @post.update_attributes(params[:post])
     redirect "/posts/#{@post.id}"
   else
-    erb :"posts/edit"
+    erb :'posts/edit'
   end
 end
- 
-get "/posts/:id/edit" do
+
+get '/posts/:id/edit' do
   @post = Post.find(params[:id])
-  @title = "Edit Form"
-  erb :"posts/edit"
+  @title = 'Edit Form'
+  erb :'posts/edit'
 end
 
-post "/posts" do
+post '/posts' do
   @post = Post.new(params[:post])
   if @post.save
     redirect "posts/#{@post.id}", :notice => 'Congrats! Love the new post.'
   else
-    redirect "posts/create", :error => 'Something went wrong. Try again.'
+    redirect 'posts/create', :error => 'Something went wrong. Try again.'
   end
 end
 
 # Our About Me page.
-get "/about" do
-  @title = "About Me"
-  erb :"pages/about"
+get '/about' do
+  @title = 'About Me'
+  erb :'pages/about'
 end
 
 __END__
@@ -115,7 +115,7 @@ __END__
             <ul class="nav pull-right">
               <li><a href="/">Home</a></li>
               <li><a href="/posts/create">New Post</a></li>
-              <li><a href="/about">About Me</a></li>             
+              <li><a href="/about">About Me</a></li>
               <% if post_show_page?  %>
                 <li><a href="/posts/<%= @post.id %>/edit">Edit Post</a></li>
                 <li><%= delete_post_button(@post.id) %></li>
@@ -130,7 +130,7 @@ __END__
       <% end %>
       <% if flash[:error] %>
         <p class="alert alert-error"><%= flash[:error] %>
-      <% end %> 
+      <% end %>
       <%= yield %>
     </div>
   </body>
@@ -162,12 +162,12 @@ __END__
   <textarea id="post_body" name="post[body]" rows="10" cols="10"><%= @post.body %></textarea>
   <br />
   <input type="submit" value="Create!"/>
-</form> 
+</form>
 
 @@ posts/edit
 <h1>Edit Post</h1>
 <form action="/posts/<%= @post.id %>" method="post">
-  <input type="hidden" name="_method" value="put" /> 
+  <input type="hidden" name="_method" value="put" />
   <label for="post_title">Title:</label><br />
   <input id="post_title" name="post[title]" type="text" value="<%= @post.title %>" />
   <br />
@@ -183,6 +183,6 @@ __END__
 
 @@ _delete_post_button
 <form action="/posts/<%= post_id %>" method="post">
-  <input type="hidden" name="_method" value="delete" /> 
+  <input type="hidden" name="_method" value="delete" />
   <input type="submit" value="Delete Post" />
 </form>

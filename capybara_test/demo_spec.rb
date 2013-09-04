@@ -17,7 +17,7 @@ describe 'Demo API' do
 
   it 'get hi' do
     visit '/hi'
-    page.has_content?("Hello World!").should be_true
+    page.has_content?('Hello World!').should be_true
   end
 end
 

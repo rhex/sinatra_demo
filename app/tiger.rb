@@ -69,7 +69,7 @@ class Tiger < Sinatra::Base
 #    settings.mongo_db['test'].update({:_id => id}, {'$set' => {:name => name}})
 #    document_by_id(id).to_json
 #  end
-# 
+#
 #  # delete the specified document and return success
 #  delete '/remove/:id' do
 #    content_type :json

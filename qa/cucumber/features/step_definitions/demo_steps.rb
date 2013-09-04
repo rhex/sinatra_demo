@@ -7,5 +7,5 @@ When(/^I visit hi$/) do
 end
 
 Then(/^I should see Hello World!$/) do
-  page.has_content?("Hello World!").should be_true
+  page.has_content?('Hello World!').should be_true
 end

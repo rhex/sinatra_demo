@@ -118,6 +118,8 @@ GEM
     rabl (0.8.6)
       activesupport (>= 2.3.14)
     rack (1.5.2)
+    rack-parser (0.4.0)
+      rack
     rack-protection (1.5.0)
       rack
     rack-test (0.6.2)
@@ -250,6 +252,7 @@ DEPENDENCIES
   nokogiri
   pg
   rabl
+  rack-parser
   rack-test
   racksh
   radius

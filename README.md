@@ -57,13 +57,17 @@ https://github.com/cucumber/cucumber/wiki
 
 http://selenium.googlecode.com/git/docs/api/rb/index.html
 
+#rubocop
+
+rubocop --auto-gen-config
+
 # TODO:
 
 * try to use some headless browser
 * use machinist
 * selenium more decent structure
 * Sinatra::Contrib
-* try sequel
+* try sequel ohm, couchdb restclient,
 * sina_em: I don't know what it mean
 
 Thanks to:
